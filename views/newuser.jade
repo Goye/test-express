@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .container
+    .well(style= {margin: '100px'})
+      h1 New Users
+      if error !== ''
+        .alert.alert-danger= error
+      form#formAddUser(name="adduser",method="post",action="/adduser")
+        .form-group
+          label(for='exampleInputName') Name
+          input.form-control#inputUserName(type="text", placeholder="Enter name", name="username")
+        .form-group 
+          label(for='exampleInputEmail') User Email
+          input.form-control#inputUserEmail(type="text", placeholder="Enter email", name="useremail")   
+        button.btn.btn-default#btnSubmit(type="submit") Submit      

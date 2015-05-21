@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    div(style= {margin: '100px'})
+      nav.navbar.navbar-inverse.navbar-static-top
+        .container 
+          a.navbar-brand(href='/') Node.js using Express
+          ul.nav navbar-nav
+      .jumbotron(style= {padding: '40px'})
+        h1 Hello, world!
+        p This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information
+        ul
+          each user, i in userlist
+            li
+              a= user.email
+        p   
+          a.btn.btn-primary.btn-lg.save-service(role='button', href='/users') Create more Users   
+      
